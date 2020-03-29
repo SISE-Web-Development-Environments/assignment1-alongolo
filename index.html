@@ -21,7 +21,7 @@
 	<img align="center" src=div1.png width=100% height=100%/>
 <section id="about" class="section">
 <br/>
-<table border="0" align="center" cellpadding="10" cellspacing="0" width="50%">
+<table border="0" align="center" cellpadding="10" cellspacing="0" width="80%">
 <tbody>
 <tr>
 <td style="height:500px; width:100px; background: url(arthur2.png) no-repeat; background-position: right">
@@ -191,15 +191,20 @@ web3 – היעזר בחומר עזר שבאתר ובאינטרנט . מומלץ
 <tr><td><h3>Contact Me!</h3></td></tr>
 <tr>
 <td align="Left">
-<form action="mailto:alongolo@post.bgu.ac.il" method="post" enctype="text/plain">
+<form action="mailto:alongolo@post.bgu.ac.il?body=cmnt&subject=" method="get" enctype="text/plain">
 <font size="5">Name:</font><br>
 <input type="text" name="name"><br>
+
 <font size="5">E-mail:</font><br>
 <input type="text" name="mail"><br>
+
+<font size="5">Subject:</font><br>
+<input type="text" name="subject"><br>
+
 <font size="5">Message:</font><br>
-<textarea name="comments" rows="4" cols="36"></textarea>
-<select name="rating" style="font-size: 25px; height:35px;">
-<option selected> &#128540</option>
+<textarea name="body" id="cmnt" rows="4" cols="36"></textarea>
+<select name="rating" style="font-size: 25px; height:35px;" onchange="func(value)">
+<option selected> &#128540 </option selected>
 <option> &#128513 </option>
 <option> &#128514 </option>
 <option> &#128518 </option>
@@ -234,6 +239,11 @@ $(function(){
     $('html,body').scrollTo(this.hash,this.hash); 
   });
 });
+</script>
+<script>
+function func(value){
+	document.getElementById("cmnt").value+=value;
+}
 </script>
 <script type="text/javascript">
  $(document).scroll(function() {
